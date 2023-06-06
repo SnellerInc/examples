@@ -18,3 +18,12 @@ output "table" {
   value       = var.table
 }
 
+output "sneller_source" {
+  description = "Sneller source bucket"
+  value       = aws_s3_bucket.sneller_source.bucket
+}
+
+output "sneller_ingest" {
+  description = "Sneller ingest bucket"
+  value       = aws_s3_bucket.sneller_ingest.bucket
+}
