@@ -1,0 +1,56 @@
+diff -c step2/sneller.tf step3/sneller.tf
+*** step2/sneller.tf	2023-06-01 18:49:58.576730509 +0200
+--- step3/sneller.tf	2023-06-01 18:48:53.505972152 +0200
+***************
+*** 3,8 ****
+--- 3,10 ----
+  }
+  
+  resource "helm_release" "sneller" {
++   depends_on = [helm_release.lb]
++ 
+    name      = "sneller"
+    namespace = kubernetes_namespace.sneller.metadata[0].name
+  
+***************
+*** 60,64 ****
+--- 62,100 ----
+      name = "configuration.values.s3Bucket"
+      value = "s3://${aws_s3_bucket.sneller_ingest.bucket}"
+    }
++   
++   # The following settings are only used when exposing
++   # Sneller via the AWS ingress controller.
++   set {
++     name = "snellerd.serviceType"
++     value = "NodePort"
++   }
++   
++   set {
++     name = "ingress.enabled"
++     value = true
++   }
++ 
++   set {
++     name = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/scheme"
++     value = "internet-facing"
++   }
++ 
++   set {
++     name = "ingress.annotations.kubernetes\\.io/ingress\\.class"
++     value = "alb"
++   }
++ 
++   set {
++     name = "ingress.hosts.0"
++     value = local.fqdn
++   }
++  
++   # The following settings are only used when exposing
++   # Sneller using TLS certificates
++   set {
++     name = "ingress.annotations.alb\\.ingress\\.kubernetes\\.io/certificate-arn"
++     value = aws_acm_certificate.sneller.arn
++   }
+  }
+  
