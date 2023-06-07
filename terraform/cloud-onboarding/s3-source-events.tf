@@ -5,6 +5,5 @@ resource "aws_s3_bucket_notification" "sneller_source" {
     id            = "sneller-source"
     queue_arn     = sneller_tenant_region.sneller.sqs_arn
     events        = ["s3:ObjectCreated:*"]
-    filter_prefix = local.sneller_source_prefix
   }
 }
