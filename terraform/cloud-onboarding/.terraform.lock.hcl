@@ -43,23 +43,8 @@ provider "registry.terraform.io/hashicorp/random" {
 }
 
 provider "registry.terraform.io/snellerinc/sneller" {
-  version = "0.0.6"
+  version = "0.0.7"
   hashes = [
-    "h1:XUEfvnwscNJGnWwLex1M6khIaCRDRRgoRsNgKPHJkN4=",
-    "zh:01bb6ec93858d88846f6aef86d0ee5592257b95200d61fef72349bfe0d3ebad6",
-    "zh:02d2f3c0919ffb03407f0d9abac686d8156dceb9ea2aa2b808476ffe791edf10",
-    "zh:17936ee9ccc29599986491bdefa2ccf9da0a82623fe090a114e4ee71a8ff6512",
-    "zh:2c348e16ad24ebbbcbdb0540641d42ace78592b64cea13ab696b8d7b63c213e6",
-    "zh:70162de6996f2eac470ed9098c94725260e923c4e7d010037b403f89c4503b1a",
-    "zh:79ae4ab1e8ae12a59836f19fcd8ff239d57f1b6c2102d84e05c6455284192e8a",
-    "zh:82fe396233c8e78ce3f49f0a44d4a35f2b438921112d93cef9392406d9f9c6d4",
-    "zh:8a43a16a95f1f0a94242fadbe4784e1796cf74e87638f10bc2ec95d9a4a4e759",
-    "zh:c2ca2bc8c174824e9efd0271bccae7309a6002f83a2a0591e788d86d2d999857",
-    "zh:d48c3be10048cb6aaa5df15a0bf65c52f1e4c1223783d4a6bac47c6fd7524851",
-    "zh:e5ae10fb39d0dbf2fa593f4e83b07c7fad7914a0ae991732394761f19bd79504",
-    "zh:e77537356460b84d623abfa7ab5bbffccc58f5811c215e82bb654dc429364d4d",
-    "zh:ef82d925b5dafe9bb7ff928f44dfae35bad1398a8ab8c21c326df4460eee17a6",
-    "zh:f26e0763dbe6a6b2195c94b44696f2110f7f55433dc142839be16b9697fa5597",
-    "zh:fb09e6af113bd54df954d27f7ea936013b4b224a19991a0a401bf29e6185eb31",
+    "h1:k3FfCUTrUr+GXih7uvLNviqXud5eyAcyb+gpEkaAP6w=",
   ]
 }
