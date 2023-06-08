@@ -1,0 +1,9 @@
+{
+    "input": [
+      {
+        "pattern": "s3://config-bucket-XXXXXXXX/cloudtrail/AWSLogs/ACCOUNT-ID/CloudTrail/{region}/*/*/*/*.json.gz",
+        "format": "cloudtrail.json.gz"
+      }
+    ],
+    "partitions": [ { "field": "region" } ]
+}

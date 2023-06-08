@@ -1,0 +1,9 @@
+{
+    "input": [
+      {
+        "pattern": "config-bucket-XXXXXXXX/AWSLogs/ACCOUNT-ID/Config/{region}/*/*/*/*/*.log.gz",
+        "format": "json.gz"
+      }
+    ],
+    "partitions": [ { "field": "region" } ]
+}

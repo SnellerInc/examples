@@ -1,0 +1,20 @@
+{
+  "input": [
+    {
+      "pattern": "s3://YOUR_SOURCE_BUCKET_HERE/AWSLogs/YOUR_AWS_ACCOUNT_ID_HERE/*.log.gz",
+      "format": "csv.gz",
+      "hints": {
+        "skip_records": 1,
+        "separator": " ",
+        "missing_values": [
+          "-"
+        ],
+        "fields": [
+          { "name": "bucket_owner", "type": "string" },
+          { "name": "bucket", "type": "string" },
+          { "name": "time", "type": "datetime" }
+        ]
+      }
+    }
+  ]
+}

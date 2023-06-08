@@ -1,0 +1,8 @@
+{
+    "input": [
+      {
+        "pattern": "s3://DESTINATION-PREFIX/SOURCE-BUCKET/config-ID/data/*.parquet",
+        "format": "parquet"
+      }
+    ]
+}  

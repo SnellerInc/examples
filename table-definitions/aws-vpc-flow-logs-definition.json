@@ -1,0 +1,39 @@
+{
+  "input": [
+    {
+      "pattern": "s3://YOUR_SOURCE_BUCKET_HERE/vpcflowlogs/AWSLogs/YOUR_AWS_ACCOUNT_ID_HERE/vpcflowlogs/{region}/{yyyy}/{mm}/{dd}/*.log.gz",
+      "format": "csv.gz",
+      "hints": {
+        "skip_records": 1,
+        "separator": " ",
+        "missing_values": [
+          "-"
+        ],
+        "fields": [
+          { "name": "version", "type": "int" },
+          { "name": "account_id", "type": "string" },
+          { "name": "interface_id", "type": "string" },
+          { "name": "srcaddr", "type": "string" },
+          { "name": "dstaddr", "type": "string" },
+          { "name": "srcport", "type": "int" },
+          { "name": "dstport", "type": "int" },
+          { "name": "protocol", "type": "int" },
+          { "name": "packets", "type": "int" },
+          { "name": "bytes", "type": "int" },
+          { "name": "start", "type": "datetime", "format": "unix_seconds" },
+          { "name": "end", "type": "datetime", "format": "unix_seconds" },
+          { "name": "action", "type": "string" },
+          { "name": "log_status", "type": "string" }
+        ]
+      }
+    }
+  ],
+  "partitions": [
+    { "field": "region" },
+    { "field": "date", "value": "$yyyy/$mm/$dd" }
+  ],
+  "retention_policy": {
+    "field": "end",
+    "valid_for": "1m"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "input": [
+    {
+      "pattern": "s3://aws-waf-logs-DOC-EXAMPLE-BUCKET-SUFFIX/DOC-EXAMPLE-KEY-NAME-PREFIX/AWSLogs/ACCOUNT-ID/WAFLogs/{region}/web-acl-name/*/*/*/*/*/*.log.gz",
+"format": "json.gz"
+    }
+  ],
+  "partitions": [ { "field": "region" } ]
+}

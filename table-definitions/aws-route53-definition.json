@@ -1,0 +1,8 @@
+{
+    "input": [
+      {
+        "pattern": "your_bucket_name/AWSLogs/ACCOUNT-ID/*.log.gz",
+        "format": "json.gz"
+      }
+    ]
+}
