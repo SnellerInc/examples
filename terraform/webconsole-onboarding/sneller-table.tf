@@ -8,7 +8,7 @@ resource "sneller_table" "test" {
 
   inputs = [
     {
-      pattern = "s3://${data.aws_s3_bucket.sneller_source.bucket}/${var.sneller_path}/${var.sneller_path}"
+      pattern = "s3://${data.aws_s3_bucket.sneller_source.bucket}/${var.sneller_path}/${var.sneller_wildcard}"
       format  = var.sneller_format != "" ? var.sneller_format : null
     }
   ]
